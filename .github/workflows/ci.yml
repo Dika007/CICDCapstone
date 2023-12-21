@@ -1,4 +1,4 @@
-name: capstone
+name: API
 
 on:
   push:
@@ -19,10 +19,5 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
-  test:
-    name: test capstone
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: test capstone
+      - name: Test API
         run: mvn clean verify
